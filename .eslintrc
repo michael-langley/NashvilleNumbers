@@ -1,0 +1,17 @@
+{
+  "extends": "airbnb",
+  "parser": "babel-eslint",
+  "rules": {
+    "react/wrap-multilines": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "react/jsx-pascal-case": [1, {"allowAllCaps": false}],
+    "react/jsx-wrap-multilines": 1,
+    "no-plusplus": 0,
+    "no-shadow": 0,
+    "jsx-a11y/anchor-is-valid": 0,
+    "react/jsx-filename-extension": 0,
+    "no-return-assign": 0,
+    "react/destructuring-assignment": 0,
+    "semi": 1
+  }
+}

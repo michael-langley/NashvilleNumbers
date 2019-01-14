@@ -1,0 +1,14 @@
+@import '../../../../styles/base/_variables.scss';
+@import 'node_modules/bootstrap/scss/bootstrap';
+
+.page-header__container {
+  @extend .jumbotron;
+  padding: 0.7rem 2rem;
+  width: 100%;
+  text-align: center;
+}
+
+.page-header__title {
+  @extend .display-4;
+  font-size: 1.7rem;
+}

@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather+Sans:300,400,700');
+
+$font: 'Merriweather Sans', Helvetica, Arial, sans-serif;
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  box-sizing: border-box;
+}
+
+body {
+  z-index: -1;
+  height: 100vh;
+  background-color: $gray-300;
+}
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: $font;
+}
+
+:focus {
+  outline: $primary auto 2px;
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 4px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 .25px rgba(255, 255, 255, 0.5);
+}

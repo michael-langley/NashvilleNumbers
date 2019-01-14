@@ -1,0 +1,21 @@
+@import '../../../../styles/base/_variables.scss';
+@import 'node_modules/bootstrap/scss/bootstrap';
+
+.footer {
+    @extend .navbar;
+    @extend .navbar-expand-lg;
+    @extend .navbar-light;
+    @extend .shadow-sm;
+    background-color: $primary;
+    color: $white;
+    font-weight: 400;
+    padding: .1rem 5rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    left: 0;
+    bottom: 0;
+    height: $footer-height;
+  }
+  
