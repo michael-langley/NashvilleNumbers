@@ -44,6 +44,7 @@ const customStyles = {
     ...provided,
     fontSize: '0.9rem',
     letterSpacing: '0.3px',
+    color: 'black',
   }),
 };
 

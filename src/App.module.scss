@@ -15,8 +15,8 @@
   justify-content: space-around;
 
   & h4 {
-      padding: 0.5rem;
-      border-bottom: .5px solid white;
+    padding: 0.5rem;
+    border-bottom: 0.5px solid white;
   }
 
   &__dropdown {
@@ -24,6 +24,6 @@
   }
 
   &__button {
-    margin-top: 5.5rem
+    margin-top: 5.5rem;
   }
 }
