@@ -82,3 +82,31 @@
 .bg-gray-200 {
   background-color: $gray-200 !important;
 }
+
+.hero-image {
+  background: url('../nick-karvounis-1233676-unsplash.jpg') center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: fixed;
+  z-index: -100;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.hero-overlay {
+  background-color: $overlay !important;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: fixed;
+  z-index: -10;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}

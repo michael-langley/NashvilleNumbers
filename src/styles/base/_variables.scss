@@ -39,6 +39,7 @@ $teal:    #20c997 !default;
 $cyan:    #009CDC !default;
 
 $primary:       $purple !default;
+$primary-trans: #593196d5;
 $secondary:     #A991D4 !default;
 $success:       $green !default;
 $info:          $cyan !default;
@@ -46,6 +47,7 @@ $warning:       $yellow !default;
 $danger:        $red !default;
 $light:         $gray-200 !default;
 $dark:          $gray-900 !default;
+$overlay:       rgba(0,0,0, 0.7) !default;
 
 // Options
 

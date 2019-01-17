@@ -12,9 +12,8 @@ $font: 'Merriweather Sans', Helvetica, Arial, sans-serif;
 }
 
 body {
-  z-index: -1;
+  z-index: 20;
   height: 100vh;
-  background-color: $gray-300;
 }
 
 html,

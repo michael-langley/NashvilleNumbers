@@ -15,9 +15,9 @@
     "classnames": "^2.2.6",
     "node-sass": "^4.11.0",
     "prop-types": "^15.6.2",
-    "react": "^16.7.0-alpha.2",
+    "react": "^16.8.0-alpha.1",
     "react-breakpoints": "^3.0.3",
-    "react-dom": "^16.7.0-alpha.2",
+    "react-dom": "^16.8.0-alpha.1",
     "react-scripts": "2.1.0",
     "react-select": "^2.2.0"
   },
