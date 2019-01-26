@@ -1,3 +1,4 @@
+/* eslint-env browser */
 import { useState } from 'react';
 import numberKeys from './keyToNumberData';
 
@@ -17,6 +18,7 @@ function appState() {
   function startQuiz() {
     setQuizActive(true);
     generateRandomNashNumber();
+    window.scrollTo(0, 0);
   }
 
   function endQuiz() {
@@ -24,17 +26,20 @@ function appState() {
     setSelectedKey(null);
     setRandomNumber(null);
     setInput('');
+    window.scrollTo(0, 0);
   }
 
   function dismissIncorrect() {
     setGuessResult(null);
     setInput('');
+    window.scrollTo(0, 0);
   }
 
   function advanceToNext() {
     setGuessResult(null);
     setInput('');
     generateRandomNashNumber();
+    window.scrollTo(0, 0);
   }
 
   function processResult(status) {
