@@ -133,12 +133,16 @@ const GuessScreen = ({
       <Form
         customClasses="mt-5"
         style={{ width: '90%' }}
-        htmlAttributes={{ autoComplete: 'off' }}
+        htmlAttributes={{
+          autoComplete: 'off',
+          onSubmit: e => quiz.compareGuess(e),
+        }}
       >
         <Label htmlFor="key_guess" style={{ fontSize: '0.7rem' }}>
           Enter corresponding key value
         </Label>
         <Input
+          type="text"
           customClasses="w-100 border-0 shadow-sm"
           value={input.value}
           placeholder="Enter Key"

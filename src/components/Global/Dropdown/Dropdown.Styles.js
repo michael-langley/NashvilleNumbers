@@ -42,9 +42,10 @@ const customStyles = {
 
   menuList: provided => ({
     ...provided,
-    fontSize: '0.9rem',
+    fontSize: '16px',
     letterSpacing: '0.3px',
     color: 'black',
+    maxHeight: '10rem',
   }),
 };
 
