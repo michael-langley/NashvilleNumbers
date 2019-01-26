@@ -26,8 +26,6 @@ function App() {
   const {
     quiz, keysOptions, pianoKey, input,
   } = appState();
-  console.log(quiz);
-  console.log(keysOptions);
   return (
     <ReactBreakpoints breakpoints={breakpoints}>
       <Header
@@ -94,7 +92,10 @@ const StartQuizScreen = ({ options, pianoKey, quiz }) => {
           options={options}
           placeholder="Select Key"
           value={pianoKey.selectedKey}
-          onChange={pianoKey.setSelectedKey}
+          onChange={() => {
+            pianoKey.setSelectedKey();
+            window.scrollTo(0, 0);
+          }}
           additionalContainerClasses={`${
             appStyles['center-tile__dropdown']
           } w-100`}

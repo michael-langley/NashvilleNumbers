@@ -59,6 +59,7 @@ function appState() {
     const answer = getCorrectAnswer();
     const correct = inputValue.trim().toLowerCase() === answer.trim().toLowerCase();
     processResult(correct);
+    window.scrollTo(0, 0);
   }
 
   function handleInput(value) {
