@@ -135,7 +135,10 @@ const GuessScreen = ({
         style={{ width: '90%' }}
         htmlAttributes={{
           autoComplete: 'off',
-          onSubmit: e => quiz.compareGuess(e),
+          onSubmit: (e) => {
+            quiz.compareGuess(e);
+            e.target.blur();
+          },
         }}
       >
         <Label htmlFor="key_guess" style={{ fontSize: '0.7rem' }}>
@@ -189,6 +192,14 @@ const IncorrectGuessMessage = ({ quiz, input }) => (
     <p className="text-center">
       {input.value} is not the corresponding key
     </p>
-    <Button onClick={quiz.dismissIncorrect}>Dismiss</Button>
+    <Button
+      onClick={(e) => {
+        quiz.dismissIncorrect();
+        e.target.blur();
+      }}
+      htmlAttributes={{ autoFocus: 'true' }}
+    >
+      Dismiss
+    </Button>
   </div>
 );
