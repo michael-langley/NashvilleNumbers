@@ -28,6 +28,7 @@ function App() {
   } = appState();
   return (
     <ReactBreakpoints breakpoints={breakpoints}>
+      <meta name="Description" content="App Home Screen" />
       <Header
         style={{
           borderBottom: '3px solid white',
