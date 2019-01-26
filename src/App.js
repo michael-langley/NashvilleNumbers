@@ -92,8 +92,8 @@ const StartQuizScreen = ({ options, pianoKey, quiz }) => {
           options={options}
           placeholder="Select Key"
           value={pianoKey.selectedKey}
-          onChange={() => {
-            pianoKey.setSelectedKey();
+          onChange={(val) => {
+            pianoKey.setSelectedKey(val);
             window.scrollTo(0, 0);
           }}
           additionalContainerClasses={`${
