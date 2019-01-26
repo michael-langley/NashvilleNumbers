@@ -23,23 +23,35 @@ function appState() {
     setQuizActive(false);
     setSelectedKey(null);
     setRandomNumber(null);
+    setInput('');
   }
+
+  function dismissIncorrect() {
+    setGuessResult(null);
+    setInput('');
+  }
+
+  function advanceToNext() {
+    setGuessResult(null);
+    setInput('');
+    generateRandomNashNumber();
+  }
+
   function processResult(status) {
     if (status) {
       setGuessResult('correct');
     } else {
       setGuessResult('incorrect');
     }
-    setTimeout(() => {
-      setGuessResult(null);
-      setInput('');
-      generateRandomNashNumber();
-    }, 3000);
+  }
+
+  function getCorrectAnswer() {
+    return numberKeys[selectedKey.value][randomNumber];
   }
 
   function compareGuess(e) {
     e.preventDefault();
-    const answer = numberKeys[selectedKey.value][randomNumber];
+    const answer = getCorrectAnswer();
     const correct = inputValue.trim().toLowerCase() === answer.trim().toLowerCase();
     processResult(correct);
   }
@@ -62,6 +74,9 @@ function appState() {
       generateRandomNashNumber,
       compareGuess,
       guessResult,
+      getCorrectAnswer,
+      dismissIncorrect,
+      advanceToNext,
     },
     pianoKey: { selectedKey, setSelectedKey },
     input: { value: inputValue, handleInput },

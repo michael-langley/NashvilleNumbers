@@ -56,14 +56,14 @@ const Header = ({
               <div className={styles['header-links']}>{children}</div>
           )}
 
-          {(isMobile || permanentMenu) && (
+          {/* {(isMobile || permanentMenu) && (
             <Button
               customClasses={buttonStyles['btn-menutoggle']}
               onClick={handleMenuToggle}
             >
               <FontAwesomeIcon icon={faBars} />
             </Button>
-          )}
+          )} */}
         </nav>
       );
     }}

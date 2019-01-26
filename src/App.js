@@ -56,7 +56,7 @@ function App() {
             </div>
           )}
         </div>
-        <div className="row">
+        <div className="row d-flex justify-content-center">
           {!quiz.active && (
             <StartQuizScreen
               options={keysOptions}
@@ -119,7 +119,9 @@ const GuessScreen = ({
   quiz, keysOptions, pianoKey, input,
 }) => (
   <div
-    className={`${appStyles['center-tile']} col-sm-10 col-md-5 mt-5`}
+    className={`${
+      appStyles['center-tile']
+    } col-sm-10 col-md-5 mt-5 d-flex`}
   >
     <h3>Nashville Number</h3>
 
@@ -127,23 +129,62 @@ const GuessScreen = ({
       <h3 className="text-primary mb-0">{quiz.randomNumber}</h3>
     </div>
 
-    <Form customClasses="mt-5" style={{ width: '90%' }}>
-      <Label htmlFor="key_guess" style={{ fontSize: '0.7rem' }}>
-        Enter corresponding key value
-      </Label>
-      <Input
-        customClasses="w-100 border-0 shadow-sm"
-        value={input.value}
-        placeholder="Enter Key"
-        handleValue={input.handleInput}
-        htmlAttributes={{ id: 'key_guess' }}
-      />
-      <div className="row justify-content-between mt-3">
-        <Button onClick={quiz.endQuiz}>End Quiz</Button>
-        <Button onClick={e => quiz.compareGuess(e)}>
-          Submit Guess
-        </Button>
-      </div>
-    </Form>
+    {!quiz.guessResult && (
+      <Form
+        customClasses="mt-5"
+        style={{ width: '90%' }}
+        htmlAttributes={{ autoComplete: 'off' }}
+      >
+        <Label htmlFor="key_guess" style={{ fontSize: '0.7rem' }}>
+          Enter corresponding key value
+        </Label>
+        <Input
+          customClasses="w-100 border-0 shadow-sm"
+          value={input.value}
+          placeholder="Enter Key"
+          handleValue={input.handleInput}
+          htmlAttributes={{ id: 'key_guess' }}
+        />
+        <div className="row justify-content-between mt-3">
+          <Button onClick={quiz.endQuiz}>End Quiz</Button>
+          <Button onClick={e => quiz.compareGuess(e)}>
+            Submit Guess
+          </Button>
+        </div>
+      </Form>
+    )}
+    {quiz.guessResult
+      && quiz.guessResult === 'correct' && (
+        <CorrectGuessMessage
+          pianoKey={pianoKey}
+          quiz={quiz}
+          input={input}
+        />
+    )}
+    {quiz.guessResult
+      && quiz.guessResult === 'incorrect' && (
+        <IncorrectGuessMessage quiz={quiz} input={input} />
+    )}
+  </div>
+);
+
+const CorrectGuessMessage = ({ pianoKey, quiz, input }) => (
+  <div className="p-2 mt-4 d-flex flex-column align-items-center">
+    <h5 className="text-success">Correct!</h5>
+    <p className="text-center">
+      In the key of {pianoKey.selectedKey.value}, the Nashville Number{' '}
+      {quiz.randomNumber} corresponds to the key of {input.value}
+    </p>
+    <Button onClick={quiz.advanceToNext}>Next Question</Button>
+  </div>
+);
+
+const IncorrectGuessMessage = ({ quiz, input }) => (
+  <div className="p-2 mt-4 d-flex flex-column align-items-center">
+    <h5 className="text-danger">Wrong Answer, Try Again!</h5>
+    <p className="text-center">
+      {input.value} is not the corresponding key
+    </p>
+    <Button onClick={quiz.dismissIncorrect}>Dismiss</Button>
   </div>
 );
