@@ -2,12 +2,11 @@
 @import 'node_modules/bootstrap/scss/bootstrap';
 
 .center-tile {
-  border: 1px solid white;
   color: white;
   @extend .shadow;
   border-radius: 1rem;
   padding: 1rem 3rem 4rem 3rem;
-  margin: 4rem 1.5rem;
+  margin: 1rem 1.5rem;
   background-color: transparent;
   display: flex;
   flex-direction: column;
@@ -15,8 +14,10 @@
   justify-content: space-around;
 
   & h4 {
-    padding: 0.5rem;
+    width: 100%;
+    padding: 0.8rem;
     border-bottom: 0.5px solid white;
+    text-align: center;
   }
 
   &__dropdown {
