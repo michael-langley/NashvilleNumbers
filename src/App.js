@@ -161,7 +161,7 @@ const GuessScreen = ({
             value={input.value}
             placeholder="Enter Key"
             handleValue={input.handleInput}
-            htmlAttributes={{ id: 'key_guess', ref: inputEl }}
+            htmlAttributes={{ id: 'key_guess', ref: inputEl, autoFocus: true }}
           />
           <div className="row justify-content-between mt-3">
             <Button onClick={quiz.endQuiz}>End Quiz</Button>
