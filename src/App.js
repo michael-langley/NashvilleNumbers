@@ -1,5 +1,5 @@
 /* eslint-env browser */
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import ReactBreakpoints from 'react-breakpoints';
 import Header from './components/Global/Layout/Header';
@@ -119,63 +119,73 @@ const StartQuizScreen = ({ options, pianoKey, quiz }) => {
 
 const GuessScreen = ({
   quiz, keysOptions, pianoKey, input,
-}) => (
-  <div
-    className={`${
-      appStyles['center-tile']
-    } col-sm-10 col-md-5 mt-5 d-flex`}
-  >
-    <h3>Nashville Number</h3>
+}) => {
+  const inputEl = useRef(null);
 
-    <div className="py-2 px-3 mt-2 bg-white text-align-center">
-      <h3 className="text-primary mb-0">{quiz.randomNumber}</h3>
+  useEffect(() => {
+    if (inputEl.current) {
+      inputEl.current.focus();
+    }
+  });
+
+  return (
+    <div
+      className={`${
+        appStyles['center-tile']
+      } col-sm-10 col-md-5 mt-5 d-flex`}
+    >
+      <h3>Nashville Number</h3>
+
+      <div className="py-2 px-3 mt-2 bg-white text-align-center">
+        <h3 className="text-primary mb-0">{quiz.randomNumber}</h3>
+      </div>
+
+      {!quiz.guessResult && (
+        <Form
+          customClasses="mt-5"
+          style={{ width: '90%' }}
+          htmlAttributes={{
+            autoComplete: 'off',
+            onSubmit: (e) => {
+              quiz.compareGuess(e);
+              e.target.blur();
+            },
+          }}
+        >
+          <Label htmlFor="key_guess" style={{ fontSize: '0.7rem' }}>
+            Enter corresponding key value
+          </Label>
+          <Input
+            type="text"
+            customClasses="w-100 border-0 shadow-sm"
+            value={input.value}
+            placeholder="Enter Key"
+            handleValue={input.handleInput}
+            htmlAttributes={{ id: 'key_guess', ref: inputEl }}
+          />
+          <div className="row justify-content-between mt-3">
+            <Button onClick={quiz.endQuiz}>End Quiz</Button>
+            <Button onClick={e => quiz.compareGuess(e)}>
+              Submit Guess
+            </Button>
+          </div>
+        </Form>
+      )}
+      {quiz.guessResult
+        && quiz.guessResult === 'correct' && (
+          <CorrectGuessMessage
+            pianoKey={pianoKey}
+            quiz={quiz}
+            input={input}
+          />
+      )}
+      {quiz.guessResult
+        && quiz.guessResult === 'incorrect' && (
+          <IncorrectGuessMessage quiz={quiz} input={input} />
+      )}
     </div>
-
-    {!quiz.guessResult && (
-      <Form
-        customClasses="mt-5"
-        style={{ width: '90%' }}
-        htmlAttributes={{
-          autoComplete: 'off',
-          onSubmit: (e) => {
-            quiz.compareGuess(e);
-            e.target.blur();
-          },
-        }}
-      >
-        <Label htmlFor="key_guess" style={{ fontSize: '0.7rem' }}>
-          Enter corresponding key value
-        </Label>
-        <Input
-          type="text"
-          customClasses="w-100 border-0 shadow-sm"
-          value={input.value}
-          placeholder="Enter Key"
-          handleValue={input.handleInput}
-          htmlAttributes={{ id: 'key_guess' }}
-        />
-        <div className="row justify-content-between mt-3">
-          <Button onClick={quiz.endQuiz}>End Quiz</Button>
-          <Button onClick={e => quiz.compareGuess(e)}>
-            Submit Guess
-          </Button>
-        </div>
-      </Form>
-    )}
-    {quiz.guessResult
-      && quiz.guessResult === 'correct' && (
-        <CorrectGuessMessage
-          pianoKey={pianoKey}
-          quiz={quiz}
-          input={input}
-        />
-    )}
-    {quiz.guessResult
-      && quiz.guessResult === 'incorrect' && (
-        <IncorrectGuessMessage quiz={quiz} input={input} />
-    )}
-  </div>
-);
+  );
+};
 
 const CorrectGuessMessage = ({ pianoKey, quiz, input }) => (
   <div className="p-2 mt-4 d-flex flex-column align-items-center">
@@ -184,7 +194,12 @@ const CorrectGuessMessage = ({ pianoKey, quiz, input }) => (
       In the key of {pianoKey.selectedKey.value}, the Nashville Number{' '}
       {quiz.randomNumber} corresponds to the key of {input.value}
     </p>
-    <Button onClick={quiz.advanceToNext}>Next Question</Button>
+    <Button
+      onClick={quiz.advanceToNext}
+      htmlAttributes={{ autoFocus: true }}
+    >
+      Next Question
+    </Button>
   </div>
 );
 
@@ -199,7 +214,7 @@ const IncorrectGuessMessage = ({ quiz, input }) => (
         quiz.dismissIncorrect();
         e.target.blur();
       }}
-      htmlAttributes={{ autoFocus: 'true' }}
+      htmlAttributes={{ autoFocus: true }}
     >
       Dismiss
     </Button>
