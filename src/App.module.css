@@ -161,7 +161,6 @@
 body {
   z-index: 20;
   height: 100vh;
-  font-display: auto;
 }
 
 html,
@@ -181,7 +180,8 @@ a,
 .h5,
 .h6 {
   font-family: var(--font);
-  color: white;
+  font-display: auto;
+  color: white !important;
 }
 
 input[type='text'],
