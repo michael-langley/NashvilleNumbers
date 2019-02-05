@@ -1,0 +1,28 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--light);
+  color: var(--dark);
+}
+
+/* .menu a {
+    @extend .link-menu;
+  } */
+
+.menu-left {
+  align-items: center;
+  height: 100%;
+  padding: 1rem 0.5rem;
+}
+.menu-left a:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+
+.menu-top {
+  width: 100vw;
+  height: 20%;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}

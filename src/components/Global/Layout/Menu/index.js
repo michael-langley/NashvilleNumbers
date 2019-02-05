@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import styles from './Menu.module.scss';
+import styles from './Menu.module.css';
 
 const propTypes = {
   customClasses: PropTypes.string,
@@ -28,7 +28,7 @@ const Menu = ({
   style,
   htmlAttributes,
 }) => {
-  const classes = classNames(styles.menu, {
+  const classes = classNames('shadow', styles.menu, {
     [styles['menu-top']]: !!topOnly,
     [customClasses]: !!customClasses,
     [locationClassname]: !!locationClassname && !topOnly,

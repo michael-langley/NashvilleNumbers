@@ -8,9 +8,8 @@ import Button from './components/Global/Button';
 import Input from './components/Global/Input';
 import Form from './components/Global/Form';
 import Label from './components/Global/Label';
-import appStyles from './App.module.scss';
+import appStyles from './App.module.css';
 import appState from './stateLogic';
-import './styles/index.scss';
 
 const breakpoints = {
   mobile: 320,
@@ -29,6 +28,8 @@ function App() {
   return (
     <ReactBreakpoints breakpoints={breakpoints}>
       <meta name="Description" content="App Home Screen" />
+      <div id="image" className={appStyles['hero-image']} />
+      <div id="overlay" className={appStyles['hero-overlay']} />
       <Header
         style={{
           borderBottom: '3px solid white',
@@ -84,7 +85,11 @@ const homeScreen = document.getElementById('home-screen');
 const StartQuizScreen = ({ options, pianoKey, quiz }) => {
   homeScreen.className = 'row justify-content-center';
   return ReactDOM.createPortal(
-    <div className={`${appStyles['center-tile']} col-sm-10 col-md-5`}>
+    <div
+      className={`${
+        appStyles['center-tile']
+      } shadow col-sm-10 col-md-5`}
+    >
       <h4>Start a New Quiz</h4>
       <Form customClasses="w-100">
         <Dropdown

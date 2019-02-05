@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import styles from './Backdrop.module.scss';
+import styles from './Backdrop.module.css';
 
 const propTypes = {
   show: PropTypes.bool.isRequired,

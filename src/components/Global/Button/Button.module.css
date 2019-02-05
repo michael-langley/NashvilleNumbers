@@ -1,0 +1,39 @@
+.btn {
+  padding: 0.2rem 0.7rem;
+  transition: all 0.2s;
+  font-weight: 300;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2rem;
+  font-family: inherit;
+}
+
+.btn:hover:not(:disabled) {
+  transform: scale(1.02);
+}
+
+.btn-secondary:hover {
+  color: white;
+}
+
+.btn-menutoggle {
+  font-weight: 600;
+  background-color: white;
+  color: var(--primary);
+  padding: 0rem 0.4rem;
+  font-size: 1.3rem;
+}
+
+.btn-small {
+  padding: 0rem 0.4rem;
+  min-height: 0rem;
+  font-size: 0.8rem;
+}
+
+.btn-xsmall {
+  padding: 0rem 0.3rem;
+  min-height: 0rem;
+  font-size: 0.7rem;
+}

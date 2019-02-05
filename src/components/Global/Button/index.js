@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import styles from './Button.module.scss';
+import styles from './Button.module.css';
 
 const propTypes = {
   onClick: PropTypes.func,
@@ -34,7 +34,7 @@ const Button = ({
   style,
   htmlAttributes,
 }) => {
-  const classes = classNames(styles.btn, 'btn-primary', {
+  const classes = classNames('btn-primary', styles.btn, {
     [customClasses]: !!customClasses,
     [styles['btn-small']]: !!small,
     [styles['btn-xsmall']]: !!xsmall,

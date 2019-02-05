@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import styles from './PageHeader.module.scss';
+import styles from './PageHeader.module.css';
 
 const propTypes = {
   customContainerClasses: PropTypes.string,
@@ -31,15 +31,20 @@ const PageHeader = ({
   titleStyle,
 }) => {
   const containerClasses = classNames(
+    'jumbotron',
     styles['page-header__container'],
     {
       [customContainerClasses]: !!customContainerClasses,
     },
   );
 
-  const titleClasses = classNames(styles['page-header__title'], {
-    [customTitleClasses]: !!customTitleClasses,
-  });
+  const titleClasses = classNames(
+    'page-header-4',
+    styles['page-header__title'],
+    {
+      [customTitleClasses]: !!customTitleClasses,
+    },
+  );
 
   return (
     <div

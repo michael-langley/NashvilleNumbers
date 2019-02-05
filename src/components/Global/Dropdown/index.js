@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ReactSelect from 'react-select';
 import classNames from 'classnames';
-import scssStyles from './Dropdown.module.scss';
+import scssStyles from './Dropdown.module.css';
 import jsStyles from './Dropdown.Styles';
 
 const propTypes = {

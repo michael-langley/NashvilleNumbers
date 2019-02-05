@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import styles from './Footer.module.scss';
+import styles from './Footer.module.css';
 
 const propTypes = {
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.func])
@@ -19,9 +19,16 @@ const defaultProps = {
 const Footer = ({
   customClasses, children, style, htmlAttributes,
 }) => {
-  const classes = classNames(styles.footer, {
-    [customClasses]: !!customClasses,
-  });
+  const classes = classNames(
+    'navbar',
+    'navbar-expand-lg',
+    'navbar-light',
+    'shadow-sm',
+    styles.footer,
+    {
+      [customClasses]: !!customClasses,
+    },
+  );
   return (
     <footer className={classes} style={style} {...htmlAttributes}>
       {children}

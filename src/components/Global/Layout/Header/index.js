@@ -4,11 +4,11 @@ import classNames from 'classnames';
 import { Media } from 'react-breakpoints';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import styles from './Header.module.scss';
+import styles from './Header.module.css';
 import Button from '../../Button';
-import buttonStyles from '../../Button/Button.module.scss';
+import buttonStyles from '../../Button/Button.module.css';
 import Link from '../../Link';
-import linkStyles from '../../Link/Link.module.scss';
+import linkStyles from '../../Link/Link.module.css';
 
 const propTypes = {
   customClasses: PropTypes.string,
@@ -37,9 +37,16 @@ const Header = ({
 }) => (
   <Media>
     {({ breakpoints, currentBreakpoint }) => {
-      const classes = classNames(styles.header, {
-        [customClasses]: !!customClasses,
-      });
+      const classes = classNames(
+        'navbar',
+        'navbar-expand-lg',
+        'navbar-light',
+        'shadow-sm',
+        styles.header,
+        {
+          [customClasses]: !!customClasses,
+        },
+      );
 
       const isMobile = breakpoints[currentBreakpoint] <= breakpoints.tablet;
 

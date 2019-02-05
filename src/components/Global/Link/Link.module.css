@@ -1,0 +1,34 @@
+.link {
+  transition: all 0.3s;
+  color: inherit;
+}
+
+.link:hover {
+  cursor: pointer;
+  transform: scale(1.03);
+  color: inherit;
+  text-decoration: none;
+}
+
+.link-header {
+  /* @extend .nav-link; */
+  padding: 0.25rem;
+  border-bottom: 1px solid var(--white);
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+.link-header:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.link-brand {
+  font-size: 1.1rem;
+  letter-spacing: 0.25px;
+  font-weight: 500;
+}
+
+.link-menu {
+  font-size: 0.8rem;
+  border-bottom: 1px solid var(--dark);
+  padding: 0.5rem 1rem;
+}

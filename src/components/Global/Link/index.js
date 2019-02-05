@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Link as NavLink } from '@reach/router';
-import styles from './Link.module.scss';
+import styles from './Link.module.css';
 
 const propTypes = {
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.string])

@@ -1,0 +1,12 @@
+.dropdown-container {
+  padding: 0.75rem 0.5rem 0rem 0.5rem;
+}
+
+.dropdown-container__label {
+  font-size: 0.9rem;
+  color: var(--secondary);
+  font-weight: bold;
+  color: var(--dark);
+  letter-spacing: 0.25px;
+  margin-bottom: 0.25rem;
+}

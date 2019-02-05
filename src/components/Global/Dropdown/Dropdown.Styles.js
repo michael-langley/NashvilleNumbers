@@ -1,10 +1,10 @@
-import scssStyles from './Dropdown.module.scss';
+import scssStyles from './Dropdown.module.css';
 
 const customStyles = {
   multiValueLabel: provided => ({
     ...provided,
     backgroundColor: scssStyles.secondary,
-    color: 'white',
+    color: 'black',
     borderRadius: '0rem',
     letterSpacing: '0.3px',
   }),
@@ -12,7 +12,7 @@ const customStyles = {
   multiValueRemove: provided => ({
     ...provided,
     backgroundColor: scssStyles.secondary,
-    color: 'white',
+    color: 'black',
     borderRadius: '0rem',
     ':hover': {
       backgroundColor: scssStyles.gray500,
@@ -30,8 +30,8 @@ const customStyles = {
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
     boxSizing: 'border-box',
-    backgroundColor: scssStyles.secondary,
-    color: 'white',
+    //backgroundColor: scssStyles.secondary,
+    color: 'black',
     textTransform: 'capitalize',
   }),
 
