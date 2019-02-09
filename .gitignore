@@ -22,3 +22,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 package-lock.json
+
+/src/styles/package-lock.json
+/src/styles/node_modules

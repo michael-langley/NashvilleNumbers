@@ -25,18 +25,31 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-react": "^7.10.0",
-    "prettier": "1.14.2"
+    "prettier": "1.14.2",
+    "autoprefixer": "^7.1.2",
+    "bootstrap": "^4.2.1",
+    "font-awesome": "~4.7.0",
+    "grunt": "^1.0.1",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-exec": "^1.0.1",
+    "grunt-sass": "^2.0.0",
+    "postcss-cli": "^4.1.0",
+    "postcss-flexbugs-fixes": "^2.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "dev": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "postcss": "postcss --no-map --use autoprefixer --config src/styles/build/js/postcss.js --replace src/styles/dist/*/bootstrap.css"
   },
   "browserslist": [
     ">0.2%",
-    "not dead",
     "not ie <= 11",
     "not op_mini all"
   ]

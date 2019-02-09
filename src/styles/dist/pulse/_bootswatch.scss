@@ -1,0 +1,279 @@
+// Pulse 4.2.1
+// Bootswatch
+@import url('https://fonts.googleapis.com/css?family=Merriweather+Sans:300,400,700');
+
+
+// Variables ===================================================================
+
+// Buttons =====================================================================
+
+.btn {
+
+  &:focus,
+  &:active,
+  &:active:focus,
+  &.active:focus {
+    outline: none;
+  }
+
+  &-secondary {
+    background-color: $white;
+    border-color: #ccc;
+    color: $gray-900;
+
+    &:hover {
+      background-color: $gray-300;
+      border-color: $gray-500;
+      color: $gray-900;
+    }
+
+    &.disabled {
+      background-color: $white;
+      border-color: lighten(#ccc, 5%);
+      color: lighten($gray-900, 5%);
+    }
+  }
+
+  &-warning {
+    color: $white;
+  }
+
+  &-primary:focus {
+    box-shadow: 0 0 5px lighten($primary, 10%);
+  }
+
+  &-secondary:focus {
+    box-shadow: 0 0 5px $gray-400;
+  }
+
+  &-success:focus {
+    box-shadow: 0 0 5px lighten($success, 10%);
+  }
+
+  &-info:focus {
+    box-shadow: 0 0 5px lighten($info, 10%);
+  }
+
+  &-warning:focus {
+    box-shadow: 0 0 5px lighten($warning, 10%);
+  }
+
+  &-danger:focus {
+    box-shadow: 0 0 5px lighten($danger, 10%);
+  }
+
+  &.disabled:focus {
+    box-shadow: none;
+  }
+
+}
+
+// Typography ==================================================================
+
+// Tables ======================================================================
+
+.table .thead-dark th {
+  background-color: $secondary;
+  border-color: $table-border-color;
+}
+
+// Forms =======================================================================
+
+.form-control:focus {
+  box-shadow: 0 0 5px rgba(100,65,164,.4);
+}
+
+// Navs ========================================================================
+
+.nav-tabs {
+
+  .nav-link,
+  .nav-link.active, {
+    border-width: 0 0 1px 0;
+  }
+
+  .nav-link:hover,
+  .nav-link.active,
+  .nav-link.active:hover,
+  .nav-link.active:focus {
+    border-bottom: 1px solid $primary;
+  }
+
+  .nav-item + .nav-item {
+    margin-left: 0;
+  }
+}
+
+.breadcrumb {
+  &-item.active {
+    color: $gray-700;
+  }
+}
+
+// Indicators ==================================================================
+
+.badge {
+  padding-bottom: 0.4em;
+
+  &-secondary,
+  &-warning {
+    color: $white;
+  }
+}
+
+// Progress bars ===============================================================
+
+.progress {
+  height: 8px;
+}
+
+// Containers ==================================================================
+
+.list-group {
+
+  &-item {
+    color: rgba(255, 255, 255, 0.8);
+
+    &.active,
+    &:hover,
+    &:focus {
+      color: #fff;
+    }
+
+    &.active {
+      font-weight: bold;
+
+      &:hover {
+        background-color: $list-group-hover-bg;
+      }
+    }
+
+    &.disabled:hover {
+      color: $list-group-disabled-color;
+    }
+  }
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  box-sizing: border-box;
+}
+
+body {
+  z-index: -1;
+  height: 100vh;
+}
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: $font;
+}
+
+:focus {
+  outline: $primary auto 2px;
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 4px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 0.25px rgba(255, 255, 255, 0.5);
+}
+
+.col-1-5 {
+  flex: 0 0 12.5%;
+  max-width: 12.5%;
+}
+
+.col-10-5 {
+  flex: 0 0 87.5%;
+  max-width: 87.5%;
+}
+
+.flex-45 {
+  flex: 0 0 45%;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.wrapper {
+  min-height: 100vh;
+  height: auto !important;
+  margin: 0 auto -$footer-height;
+}
+
+.push {
+  height: $footer-height;
+}
+
+.overflow-auto {
+  overflow: auto !important;
+}
+
+.w-5 {
+  width: 5% !important;
+}
+
+.w-8 {
+  width: 8% !important;
+}
+
+.w-10 {
+  width: 10% !important;
+}
+
+.w-12 {
+  width: 12.5% !important;
+}
+
+.w-15 {
+  width: 15% !important;
+}
+
+.w-20 {
+  width: 20% !important;
+}
+
+.w-25 {
+  width: 25% !important;
+}
+
+.w-30 {
+  width: 30% !important;
+}
+
+.bg-light-dark {
+  background-color: $gray-600 !important;
+}
+
+.text-light-dark {
+  color: $gray-600 !important;
+}
+
+.bg-gray-200 {
+  background-color: $gray-200 !important;
+}

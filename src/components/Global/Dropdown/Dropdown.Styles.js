@@ -1,7 +1,7 @@
 import {
   secondary,
   gray500,
-} from '../../../styles/pulse.bootswatch.min.css';
+} from '../../../styles/dist/pulse/bootstrap.min.css';
 
 const customStyles = {
   multiValueLabel: provided => ({
