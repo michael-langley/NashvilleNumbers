@@ -1,21 +1,24 @@
-import scssStyles from './Dropdown.module.css';
+import {
+  secondary,
+  gray500,
+} from '../../../styles/pulse.bootswatch.min.css';
 
 const customStyles = {
   multiValueLabel: provided => ({
     ...provided,
-    backgroundColor: scssStyles.secondary,
-    color: 'black',
+    backgroundColor: secondary,
+    color: 'white',
     borderRadius: '0rem',
     letterSpacing: '0.3px',
   }),
 
   multiValueRemove: provided => ({
     ...provided,
-    backgroundColor: scssStyles.secondary,
-    color: 'black',
+    backgroundColor: secondary,
+    color: 'white',
     borderRadius: '0rem',
     ':hover': {
-      backgroundColor: scssStyles.gray500,
+      backgroundColor: gray500,
       transition: 'all 0.4s',
       cursor: 'pointer',
     },
@@ -30,8 +33,8 @@ const customStyles = {
     textOverflow: 'ellipsis',
     whiteSpace: 'nowrap',
     boxSizing: 'border-box',
-    //backgroundColor: scssStyles.secondary,
-    color: 'black',
+    backgroundColor: secondary,
+    color: 'white',
     textTransform: 'capitalize',
   }),
 

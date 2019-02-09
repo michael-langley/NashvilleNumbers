@@ -4,6 +4,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import './styles/pulse.bootswatch.min.css';
+import './styles/nashville-numbers.css';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
