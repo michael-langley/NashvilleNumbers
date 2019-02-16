@@ -1,5 +1,5 @@
 /* eslint-env browser */
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import numberKeys from './keyToNumberData';
 
 function appState() {
@@ -8,16 +8,42 @@ function appState() {
   const [randomNumber, setRandomNumber] = useState(null);
   const [inputValue, setInput] = useState('');
   const [guessResult, setGuessResult] = useState(null);
+  const [genNewNumber, setGenNewNumber] = useState(false);
+  const [arrayOfNumbers, setArrayOfNumbers] = useState([]);
+
+  useEffect(
+    () => {
+      if (genNewNumber) {
+        generateRandomNashNumber();
+      }
+    },
+    [genNewNumber],
+  );
+
+  useEffect(
+    () => {
+      if (arrayOfNumbers.length === 0 && quizActive) {
+        setArrayOfNumbers(Object.keys(numberKeys[selectedKey.value]));
+      }
+    },
+    [arrayOfNumbers],
+  );
 
   function generateRandomNashNumber() {
-    const options = Object.keys(numberKeys[selectedKey.value]);
-    const randomNum = options[Math.floor(Math.random() * options.length)];
+    const randomNum = arrayOfNumbers[
+      Math.floor(Math.random() * arrayOfNumbers.length)
+    ];
+    const index = arrayOfNumbers.indexOf(randomNum);
+    setGenNewNumber(false);
     setRandomNumber(randomNum);
+    arrayOfNumbers.splice(index, 1);
+    setArrayOfNumbers(arrayOfNumbers);
   }
 
   function startQuiz() {
     setQuizActive(true);
-    generateRandomNashNumber();
+    setArrayOfNumbers(Object.keys(numberKeys[selectedKey.value]));
+    setGenNewNumber(true);
     window.scrollTo(0, 0);
   }
 
@@ -26,6 +52,8 @@ function appState() {
     setSelectedKey(null);
     setRandomNumber(null);
     setInput('');
+    setArrayOfNumbers([]);
+    setGenNewNumber(false);
     window.scrollTo(0, 0);
   }
 
@@ -38,7 +66,7 @@ function appState() {
   function advanceToNext() {
     setGuessResult(null);
     setInput('');
-    generateRandomNashNumber();
+    setGenNewNumber(true);
     window.scrollTo(0, 0);
   }
 
